@@ -8,9 +8,9 @@ describe('server', () => {
         it ("should return 200", () => {
             return supertest(server).get('/').then (res=> {expect(res.status).toBe(200)})
         })
-        // it('should have a body', () => {
-        //     return supertest(server).get('/').then(res => {expect(res.body).toEqual({api:"up"})} )
-        // })
+        it.skip('should have a body', () => {
+            return supertest(server).get('/').then(res => {expect(res.body).toEqual({api:"up"})} )
+        })
         it('should have a body api:up', () => {
             return supertest(server).get('/').then(res => {expect(res.body.api).toBe("up")} )
         })
